@@ -23,7 +23,7 @@ var Production = false;
 
 var paths = {
 	stylus: {
-		src: ['src/css/**/*.styl', '!src/css/content'],
+		src: ['src/css/**/*.styl'],
 		dest: 'public/build/css'
 	},
 	scripts: {

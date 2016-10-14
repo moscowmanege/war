@@ -23,11 +23,11 @@ var Production = false;
 
 var paths = {
 	stylus: {
-		src: ['src/css/**/*.styl'],
+		src: 'src/styl/**/*.styl',
 		dest: 'public/build/css'
 	},
 	scripts: {
-		src: 'src/js/*.js',
+		src: 'src/js/**/*.js',
 		dest: 'public/build/js'
 	},
 	clean: 'public/build/**'

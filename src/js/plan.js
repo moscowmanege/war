@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 	var map = L.map('plan-canvas', { scrollWheelZoom: false, zoomControl: false, attributionControl: false }).setView([0, 0], 2);
 
-	L.tileLayer('img/plan/tiles/{z}/image_tile_{y}_{x}.jpg', {
+	L.tileLayer('/img/plan/tiles/{z}/image_tile_{y}_{x}.jpg', {
 		minZoom: 1,
 		maxZoom: 4,
 		attribution: '',

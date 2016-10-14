@@ -41,6 +41,12 @@ app.use(session({
 	}
 }));
 
+app.use(function(req, res, next) {
+	res.locals.session = req.session;
+	res.locals.host = req.hostname;
+	res.locals.url = req.originalUrl;
+	next();
+});
 
 app.route('/').get(function(req, res) {
 	res.render('index.jade');

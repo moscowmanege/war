@@ -1,0 +1,41 @@
+&.schedule
+	padding-top 40px
+	padding-bottom 40px
+	height auto
+	background-color lightgrey
+	.content-schedule
+		position relative
+		.schedule-item
+			width 50%
+			min-height 180px
+			position relative
+			box-sizing border-box
+			padding 10px
+			padding-bottom 0
+			margin-bottom 10px
+			&:last-child
+				margin-bottom 0
+			&:nth-child(odd)
+				left 0
+				border-right 5px solid black
+				// background-color main-color
+			&:nth-child(even)
+				left 50%
+				border-left 5px solid black
+				margin-left -5px
+				// background-color maroon
+			.schedule-date
+				font-size 24pt
+				line-height 26pt
+				padding-bottom 20px
+			.schedule-event
+				padding-bottom 20px
+				.event-title
+					text-transform uppercase
+					font-size 16pt
+					line-height 18pt
+					padding-bottom 10px
+				.event-description
+					font-size 12pt
+					line-height 14pt
+					hyphens auto

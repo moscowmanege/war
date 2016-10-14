@@ -1,0 +1,20 @@
+@media (max-width: 900px) {
+  .footer-inner,
+  .content-inner {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .schedule-item {
+    left: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .content-preview-image,
+  .content-preview-column {
+    display: none !important;
+  }
+  #map-canvas .info-window {
+    max-height: 200px !important;
+  }
+}

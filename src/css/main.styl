@@ -1,0 +1,215 @@
+// main-color = rgb(173, 136, 32)
+main-color = rgb(134, 117, 80)
+
+video::-webkit-media-controls {
+	display:none!important;
+}
+
+video::-webkit-media-controls-enclosure {
+	display:none!important;
+}
+
+html, body
+	margin 0
+	padding 0
+
+html, body, .content-block, .content-item, .content-inner
+	height 100%
+
+p
+	margin 0
+	padding 0
+
+
+// Menu Block
+
+
+.menu-block
+	top 0
+	position fixed
+	z-index 9999999
+	.menu-items
+		width 60px
+		height 60px
+		position absolute
+		transition background .2s ease-in-out
+		&.fill
+			transition background .2s ease-in-out
+			background-color black
+
+		&.main
+			left 0
+			&:after
+				top 0
+				left 0
+				right 0
+				bottom 0
+				position absolute
+				margin auto
+				border-bottom 17px double main-color
+				border-top 6px solid main-color
+				content ''
+				height 5px
+				width 30px
+				float left
+			&:hover
+				background-color main-color;
+				&:after
+					border-color black
+				.menu-drop
+					display block
+			.menu-drop
+				display none
+				left 60px
+				position absolute
+				box-sizing border-box
+				background-color black
+				width 170px
+				.menu-item
+					padding 10px
+					text-transform uppercase
+					display block
+					color main-color
+					cursor default
+					&:hover
+						background-color main-color
+						color black
+
+		&.locale
+			display block
+			top 60px
+			left 0
+			font-size 22pt
+			padding-top 8pt
+			font-weight bold
+			box-sizing border-box
+			color main-color
+			text-decoration none
+			text-align center
+			&:hover
+				background-color main-color
+				color black
+
+
+// Content Block
+
+
+.content-block
+	width 100%
+	.content-footer
+		background-color black
+		width 100%
+		// height 120px
+		position relative
+		color main-color
+		.footer-inner
+			max-width 1280px
+			margin 0 auto
+			padding 40px
+			// padding-top 20px
+			padding-bottom 60px
+			border-top 5px solid main-color
+			&:before
+			&:after
+				content ''
+				width 10px
+				height 10px
+				background-color black
+				position absolute
+				top 0
+			&:before
+				left 33.333%
+			&:after
+				left 66.333%
+			.footer-desc
+				overflow hidden
+				a
+					text-decoration none
+					color main-color
+					&:hover
+						color white
+				&.left
+					float left
+				&.right
+					float right
+
+	.content-item
+		width 100%
+		background-color lightgrey
+		position relative
+		overflow hidden
+		box-sizing border-box
+		.content-inner
+			max-width 1280px
+			margin 0 auto
+			padding-left 40px
+			padding-right 40px
+			.content-title
+				font-size 24pt
+				color main-color
+				display inline-block
+				box-sizing border-box
+				text-transform uppercase
+				margin-bottom 40px
+				max-width 320px
+				&:hover span
+					cursor default
+					background-color white
+					color main-color
+				span
+					display inline-block
+					background-color black
+					padding 2px
+					padding-left 10px
+					padding-right 10px
+					margin-right -5px
+					margin-bottom 3px
+
+		@import 'content/video.styl'
+
+		@import 'content/main.styl'
+
+		@import 'content/heads.styl'
+
+		@import 'content/plan.styl'
+
+		@import 'content/about.styl'
+
+		@import 'content/schedule.styl'
+
+		@import 'content/contacts.styl'
+
+		@import 'content/partners.styl'
+
+
+// Old Block
+
+
+.swiper-container
+	width 100%
+	height 100%
+	.swiper-pagination
+		height 0!important
+		margin-bottom 20px
+	.swiper-pagination-bullet-active
+		background-color white
+
+#plan-canvas
+#map-canvas
+	width 100%
+	height 100%
+	position absolute
+	top 0
+
+#map-canvas .info-window
+	max-width 420px
+	h2
+		margin 0!important
+
+
+.leaflet-container
+	background-color black!important
+	img
+		max-width none!important
+		width auto!important
+		height auto!important

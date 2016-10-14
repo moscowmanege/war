@@ -4,6 +4,8 @@ var colors = require('colors');
 
 var gulp = require('gulp'),
 		gulpif = require('gulp-if'),
+		progeny = require('gulp-progeny'),
+		filter = require('gulp-filter'),
 		changed = require('gulp-changed'),
 		plumber = require('gulp-plumber'),
 		stylus = require('gulp-stylus'),
@@ -78,6 +80,8 @@ gulp.task('stylus', function() {
 		.src(paths.stylus.src)
 		.pipe(changed(paths.stylus.dest))
 		.pipe(plumber(error_logger))
+		.pipe(filter(['**', '!*src/styl/content/**']))
+		.pipe(progeny())
 		.pipe(stylus({
 			compress: Production
 		}))

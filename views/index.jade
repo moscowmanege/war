@@ -31,14 +31,20 @@ html
 					.menu-item.schedule Расписание событий
 					.menu-item.contacts Как добраться
 					.menu-item.partners Участники проекта
-			a.menu-items.locale(href='#') en
+			if locale == 'ru'
+				a.menu-items.locale(href='/lang/en') en
+			else
+				a.menu-items.locale(href='/lang/ru') ru
 
 		.content-block
 
 			.content-item.video
 				video(autoplay='autoplay', loop='loop', muted='muted', controls='false')
 					source(src='video/' + randomInt(1,3) + '.mp4', type='video/mp4')
-					| Your browser does not support the video tag.
+					if locale == 'ru'
+						| Your browser does not support the video tag.
+					else
+						| Ваш браузер не поддерживает воспроизведение видео
 
 			.content-item.main
 				img.logo(src='img/logos/main.svg')

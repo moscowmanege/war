@@ -43,9 +43,14 @@ app.use(session({
 
 app.use(function(req, res, next) {
 	res.locals.session = req.session;
-	res.locals.host = req.hostname;
-	res.locals.url = req.originalUrl;
+	res.locals.locale = req.cookies.locale || 'ru';
+	req.locale = req.cookies.locale || 'ru';
 	next();
+});
+
+app.route('/lang/:locale').get(function(req, res) {
+	res.cookie('locale', req.params.locale);
+	res.redirect('back');
 });
 
 app.route('/').get(function(req, res) {

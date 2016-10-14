@@ -105,33 +105,36 @@ p
 		.footer-inner
 			max-width 1280px
 			margin 0 auto
-			padding 40px
-			// padding-top 20px
-			padding-bottom 60px
-			border-top 5px solid main-color
-			&:before
-			&:after
-				content ''
-				width 10px
-				height 10px
-				background-color black
-				position absolute
-				top 0
-			&:before
-				left 33.333%
-			&:after
-				left 66.333%
+			padding-left 40px
+			padding-right 40px
 			.footer-desc
-				overflow hidden
-				a
-					text-decoration none
-					color main-color
-					&:hover
-						color white
-				&.left
-					float left
-				&.right
-					float right
+				padding-top 20px
+				padding-bottom 45px
+				margin 0 auto
+				border-top 5px solid main-color
+				&:before
+				&:after
+					content ''
+					width 10px
+					height 5px
+					background-color black
+					position absolute
+					top 0
+				&:before
+					left 35%
+				&:after
+					right 35%
+				.desc-item
+					overflow hidden
+					a
+						text-decoration none
+						color main-color
+						&:hover
+							color white
+					&.left
+						float left
+					&.right
+						float right
 
 	.content-item
 		width 100%

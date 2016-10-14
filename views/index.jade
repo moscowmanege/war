@@ -1,23 +1,25 @@
 - var randomInt = function(min, max) { return Math.round(min - 0.5 + Math.random() * (max - min + 1)); }
 - var getDash = function(str) { return str.split(' ').map(function(w) { return '<span>' + w + '</span>'; }).join(' '); }
 
+- var version = '?ver=1.0'
+
 doctype html
 html
 	head
 		title W A R | M A K E T
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-		link(rel='stylesheet', type='text/css', href='css/main.css')
-		link(rel='stylesheet', type='text/css', href='css/mobile.css')
-		link(rel='stylesheet', type='text/css', href='css/libs/swiper.min.css')
-		link(rel='stylesheet', type='text/css', href='css/libs/leaflet.css')
+		link(rel='stylesheet', type='text/css', href='/build/css/main.css' + version)
+		link(rel='stylesheet', type='text/css', href='/build/css/mobile.css' + version)
+		link(rel='stylesheet', type='text/css', href='/libs/css/swiper.min.css' + version)
+		link(rel='stylesheet', type='text/css', href='/libs/css/leaflet.css' + version)
 		script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?sensor=false')
-		script(type='text/javascript', src='js/libs/jquery-2.2.4.min.js')
-		script(type='text/javascript', src='js/libs/swiper.jquery.min.js')
-		script(type='text/javascript', src='js/libs/leaflet.js')
-		script(type='text/javascript', src='js/main.js')
-		script(type='text/javascript', src='js/plan.js')
-		script(type='text/javascript', src='js/g_maps.js')
+		script(type='text/javascript', src='/libs/js/jquery-2.2.4.min.js' + version)
+		script(type='text/javascript', src='/libs/js/swiper.jquery.min.js' + version)
+		script(type='text/javascript', src='/libs/js/leaflet.js' + version)
+		script(type='text/javascript', src='/build/js/main.js' + version)
+		script(type='text/javascript', src='/build/js/plan.js' + version)
+		script(type='text/javascript', src='/build/js/g_maps.js' + version)
 	body
 		.menu-block
 			.menu-items.main

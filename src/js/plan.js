@@ -214,6 +214,10 @@ $(document).ready(function() {
 		'Экспонаты': layer_exhibits
 	};
 
-	L.control.layers(baseMaps, overlayMaps, { position: 'bottomleft' }).addTo(map);
+	L.easyButton('<span class="star" style="font-size: 19px; line-height: 22px;">✦</span>', function(btn, map){
+		map.setView([0, 0], 2);
+	}, { position: 'bottomleft' }).addTo(map);
+
+	L.control.layers(baseMaps, overlayMaps, { position: 'bottomright' }).addTo(map);
 
 });

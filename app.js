@@ -4,6 +4,7 @@ var express = require('express'),
 		session = require('express-session'),
 			app = express();
 
+var jade = require('jade');
 var i18n = require('i18n');
 
 app.set('x-powered-by', false);
@@ -55,6 +56,14 @@ app.route('/lang/:locale').get(function(req, res) {
 
 app.route('/').get(function(req, res) {
 	res.render('index.jade');
+});
+
+app.route('/plan').post(function(req, res) {
+	var opts = {
+		compileDebug: false, debug: false, cache: true, pretty: false
+	};
+
+	res.send(jade.renderFile(__dirname + '/views/plan/' + req.body.type + '/' + req.getLocale() + '/' + req.body.item + '.jade', opts));
 });
 
 

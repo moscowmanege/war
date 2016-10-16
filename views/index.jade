@@ -121,6 +121,11 @@ html
 			//- Contacts
 
 			.content-item.contacts
+				#map-window
+					if locale == 'ru'
+						include contacts/ru.jade
+					//- else
+						include contacts/en.jade
 				#map-canvas
 				.content-inner
 					.content-title!= getDash(__('Как добраться?'))

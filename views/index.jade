@@ -40,6 +40,8 @@ html
 
 		.content-block
 
+			//- Video
+
 			.content-item.video
 				video(autoplay='autoplay', loop='loop', muted='muted', controls='false')
 					source(src='video/' + randomInt(1,3) + '.mp4', type='video/mp4')
@@ -48,6 +50,8 @@ html
 					else
 						| Ваш браузер не поддерживает воспроизведение видео
 
+			//- Video
+
 			.content-item.main
 				img.logo(src='img/logos/main.svg')
 				.content-partners
@@ -55,16 +59,28 @@ html
 					a.cult_mos(href='http://kultura.mos.ru', target='_blank'): span(style='background-image: url(img/logos/cult_mos.svg)')
 					a.manege(href='http://moscowmanege.ru', target='_blank'): span(style='background-image: url(img/logos/manege.svg)')
 
+			//- Heads
+
 			.content-item.heads: .content-inner
 				.swiper-container.swiper-container-h
 					.swiper-pagination.swiper-pagination-h
 					.swiper-wrapper
-						include heads/ru.jade
+						if locale == 'ru'
+							include heads/ru.jade
+						//- else
+							include heads/en.jade
+
+			//- About
 
 			.content-item.about: .content-inner
 				.content-title!= getDash(__('О выставке'))
 				.content-columns
-					include about/ru.jade
+					if locale == 'ru'
+						include about/ru.jade
+					//- else
+						include about/en.jade
+
+			//- Plan
 
 			.content-item.plan
 				#plan-canvas
@@ -91,21 +107,36 @@ html
 								p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 								p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 								p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+			//- Schedule
+
 			.content-item.schedule: .content-inner
 				.content-title!= getDash(__('Расписание событий'))
 				.content-schedule
-					include schedule/ru.jade
+					if locale == 'ru'
+						include schedule/ru.jade
+					//- else
+						include schedule/en.jade
+
+			//- Contacts
 
 			.content-item.contacts
 				#map-canvas
 				.content-inner
 					.content-title!= getDash(__('Как добраться?'))
 
+			//- Partners
+
 			.content-item.partners
 				.content-inner
 					.content-title!= getDash(__('Участники проекта'))
 					.content-partners-columns
-						include partners/ru.jade
+						if locale == 'ru'
+							include partners/ru.jade
+						//- else
+							include partners/en.jade
+
+			//- Footer
 
 			.content-footer: .footer-inner: .footer-desc
 				.desc-item.left &copy; D D | A D 2016

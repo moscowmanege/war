@@ -63,7 +63,11 @@ app.route('/plan').post(function(req, res) {
 		compileDebug: false, debug: false, cache: true, pretty: false
 	};
 
-	res.send(jade.renderFile(__dirname + '/views/plan/' + req.body.type + '/' + req.getLocale() + '/' + req.body.item + '.jade', opts));
+	try {
+		res.send(jade.renderFile(__dirname + '/views/plan/' + req.body.type + '/' + req.getLocale() + '/' + req.body.item + '.jade', opts));
+	} catch(e) {
+		console.log('No file: ' + e.path);
+	}
 });
 
 

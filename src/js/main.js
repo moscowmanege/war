@@ -1,3 +1,7 @@
+var randomInt = function(min, max) {
+	return Math.round(min - 0.5 + Math.random() * (max - min + 1));
+};
+
 $(function() {
 
 
@@ -109,18 +113,30 @@ $(function() {
 	}).trigger('resize');
 
 
-	var $content_video = $('.content-item.video');
-	var $player = $content_video.children('video');
 	var $menu = $('.menu-items');
+	var $content_banner = $('.content-item.banner');
+
 	$(document).on('scroll', function(event) {
-		if ($(this).scrollTop() >= $content_video.height()) {
-			if (!$player.hasClass('hidden')) $player.trigger('pause').addClass('hidden');
-			$menu.addClass('fill');
-		} else {
-			if ($player.hasClass('hidden')) $player.removeClass('hidden').trigger('play');
-			$menu.removeClass('fill');
-		}
+		$(this).scrollTop() >= $content_banner.height()
+			? !$menu.hasClass('fill') && $menu.addClass('fill')
+			: $menu.hasClass('fill') && $menu.removeClass('fill');
 	});
+
+
+	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		var $video = $('<video>', {'autoplay': 'autoplay', 'loop': 'loop', 'muted': 'muted', 'controls': 'false', 'text': 'Your browser does not support the video tag.'});
+		var $source = $('<source>', {'src': 'video/' + randomInt(1,3) + '.mp4', 'type':'video/mp4'});
+		$content_banner.append($video.append($source));
+
+		$(document).on('scroll', function(event) {
+			$(this).scrollTop() >= $content_banner.height()
+				? !$video.hasClass('hidden') && $video.trigger('pause').addClass('hidden')
+				: $video.hasClass('hidden') && $video.removeClass('hidden').trigger('play');
+		});
+
+	} else {
+		$content_banner.css('background-image', 'url(/img/banner/' + randomInt(1,3) + '.png)');
+	}
 
 
 });

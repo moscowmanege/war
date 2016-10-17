@@ -1,13 +1,6 @@
 // main-color = rgb(173, 136, 32)
 main-color = rgb(134, 117, 80)
 
-video::-webkit-media-controls {
-	display:none!important;
-}
-
-video::-webkit-media-controls-enclosure {
-	display:none!important;
-}
 
 html, body
 	margin 0
@@ -29,15 +22,14 @@ p
 	position fixed
 	z-index 9999999
 	user-select none
+	&.fill .menu-items
+		transition background .2s ease-in-out
+		background-color black
 	.menu-items
 		width 60px
 		height 60px
 		position absolute
 		transition background .2s ease-in-out
-		&.fill
-			transition background .2s ease-in-out
-			background-color black
-
 		&.main
 			left 0
 			&:after

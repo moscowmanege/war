@@ -1,7 +1,3 @@
-var randomInt = function(min, max) {
-	return Math.round(min - 0.5 + Math.random() * (max - min + 1));
-};
-
 $(function() {
 
 
@@ -113,19 +109,21 @@ $(function() {
 	}).trigger('resize');
 
 
-	var $menu = $('.menu-items');
+	var $menu = $('.menu-block');
 	var $content_banner = $('.content-item.banner');
 
 	$(document).on('scroll', function(event) {
-		$(this).scrollTop() >= $content_banner.height()
-			? !$menu.hasClass('fill') && $menu.addClass('fill')
-			: $menu.hasClass('fill') && $menu.removeClass('fill');
+		$(this).scrollTop() >= $content_banner.height() - 120
+			? $menu.addClass('fill')
+			: $menu.removeClass('fill');
 	});
 
 
 	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		var $video = $('<video>', {'autoplay': 'autoplay', 'loop': 'loop', 'muted': 'muted', 'controls': 'false', 'text': 'Your browser does not support the video tag.'});
-		var $source = $('<source>', {'src': 'video/' + randomInt(1,3) + '.mp4', 'type':'video/mp4'});
+		var randInt = function(min, max) { return Math.round(min - 0.5 + Math.random() * (max - min + 1)); };
+		var $video = $('<video>', {'autoplay': true, 'loop': true, 'muted': true, 'controls': false, 'text': 'Your browser does not support the video tag.'});
+		var $source = $('<source>', {'src': 'video/' + randInt(1,3) + '.mp4', 'type':'video/mp4'});
+
 		$content_banner.append($video.append($source));
 
 		$(document).on('scroll', function(event) {

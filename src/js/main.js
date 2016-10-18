@@ -118,9 +118,8 @@ $(function() {
 			: $menu.removeClass('fill');
 	});
 
-
+	var randInt = function(min, max) { return Math.round(min - 0.5 + Math.random() * (max - min + 1)); };
 	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		var randInt = function(min, max) { return Math.round(min - 0.5 + Math.random() * (max - min + 1)); };
 		var $video = $('<video>', {'autoplay': true, 'loop': true, 'muted': true, 'controls': false, 'text': 'Your browser does not support the video tag.'});
 		var $source = $('<source>', {'src': 'video/' + randInt(1,3) + '.mp4', 'type':'video/mp4'});
 
@@ -133,7 +132,7 @@ $(function() {
 		});
 
 	} else {
-		// $content_banner.css('background-image', 'url(/img/banner/' + randomInt(1,3) + '.png)');
+		$content_banner.css('background-image', 'url(' + location.href + 'img/banner/' + randInt(1,3) + '.png)');
 	}
 
 

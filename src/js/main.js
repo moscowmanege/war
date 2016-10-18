@@ -133,7 +133,7 @@ $(function() {
 		});
 
 	} else {
-		$content_banner.css('background-image', 'url(/img/banner/' + randomInt(1,3) + '.png)');
+		// $content_banner.css('background-image', 'url(/img/banner/' + randomInt(1,3) + '.png)');
 	}
 
 

@@ -60,7 +60,7 @@ app.route('/').get(function(req, res) {
 
 app.route('/plan').post(function(req, res) {
 	var opts = {
-		compileDebug: false, debug: false, cache: true, pretty: false
+		compileDebug: false, debug: false, cache: false, pretty: false
 	};
 
 	try {

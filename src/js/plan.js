@@ -48,9 +48,13 @@ $(function() {
 
 			$.post('/plan', params).done(function(data) {
 				var $data = $(data);
+
 				$('.preview-title').html($data.filter('.data-title'));
 				$('.preview-description').html($data.filter('.data-description'));
 				$('.content-preview-column').addClass('active').find('.preview-body').scrollTop(0);
+
+				swiperH[1].removeAllSlides();
+				swiperH[1].appendSlide($data.filter('.data-images').children());
 			});
 
 			map.setView(e.latlng);

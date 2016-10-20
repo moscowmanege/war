@@ -1,10 +1,12 @@
+var swiperH = null;
+
 $(function() {
 
 
 	// Swiper Block
 
 
-	var swiperH = new Swiper('.swiper-container-h', {
+	swiperH = new Swiper('.swiper-container-h', {
 		pagination: '.swiper-pagination-h',
 		paginationClickable: true,
 		slidesPerView: 'auto',

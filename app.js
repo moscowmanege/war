@@ -1,7 +1,6 @@
 var express = require('express'),
 		bodyParser = require('body-parser'),
 		cookieParser = require('cookie-parser'),
-		session = require('express-session'),
 			app = express();
 
 var jade = require('jade');
@@ -30,20 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(i18n.init);
 
-app.use(session({
-	key: 'session',
-	rolling: true,
-	resave: false,
-	saveUninitialized: false,
-	secret: 'keyboard cat',
-	cookie: {
-		path: '/',
-		maxAge: 1000 * 60 * 60 * 2 // 2 hours
-	}
-}));
-
 app.use(function(req, res, next) {
-	res.locals.session = req.session;
 	res.locals.locale = req.cookies.locale || 'ru';
 	req.locale = req.cookies.locale || 'ru';
 	next();

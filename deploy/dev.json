@@ -1,0 +1,16 @@
+{
+	"apps": [
+		{
+			"name": "war site",
+			"script": "./app.js",
+			"exec_mode": "fork",
+			"watch": ["app.js", "locales"],
+			"autorestart": false,
+			"kill_timeout": 1600,
+			"env": {
+				"PORT": 3000,
+				"NODE_ENV": "development"
+			}
+		},
+	]
+}

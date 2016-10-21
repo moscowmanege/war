@@ -10,9 +10,8 @@ app.set('x-powered-by', false);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
-app.use(express.static(__dirname + '/public'));  // remove
 if (process.env.NODE_ENV != 'production') {
-	// app.use(express.static(__app_root + '/public'));
+	app.use(express.static(__dirname + '/public'));
 	app.locals.pretty = true;
 	app.set('json spaces', 2);
 }

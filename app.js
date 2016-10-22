@@ -56,5 +56,6 @@ app.route('/plan').post(function(req, res) {
 });
 
 
-app.listen(process.env.PORT || 3000);
-console.log('http://127.0.0.1:3000');
+app.listen(process.env.PORT || 3000, 'localhost', function() {
+	console.log('http://localhost:' + (process.env.PORT || 3000));
+});

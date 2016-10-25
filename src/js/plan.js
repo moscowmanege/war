@@ -16,8 +16,6 @@ $(function() {
 		reuseTiles: true
 	}).addTo(map);
 
-	L.control.zoom({ position: 'bottomleft' }).addTo(map);
-
 
 	// Layers Data
 
@@ -208,14 +206,21 @@ $(function() {
 		}
 	}).addTo(map);
 
-	var baseMaps = {
-		'Темы': themes_group,
-		'Залы': layer_halls
-	};
 
-	var overlayMaps = {
-		'Экспонаты': layer_exhibits
-	};
+	// Layer Controls
+
+
+	var baseMaps = {};
+	var overlayMaps = {};
+	if ($('.content-block').attr('locale') == 'ru') {
+		baseMaps = { 'Темы': themes_group, 'Залы': layer_halls };
+		overlayMaps = { 'Экспонаты': layer_exhibits };
+	} else {
+		baseMaps = { 'Topics': themes_group, 'Halls': layer_halls };
+		overlayMaps = { 'Exhibits': layer_exhibits };
+	}
+
+	L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
 	L.easyButton('<span class="star" style="font-size: 19px; line-height: 22px;">✦</span>', function(btn, map){
 		map.setView([0, 0], 2);

@@ -46,7 +46,10 @@ html
 			//- Main
 
 			.content-item.main
-				img.logo(src='img/logos/main.svg')
+				if locale == 'ru'
+					img.logo(src='img/logos/main_ru.svg')
+				else
+					img.logo(src='img/logos/main_en.svg')
 				.content-partners
 					a.mkrf(href='http://mkrf.ru', target='_blank'): span(style='background-image: url(img/logos/mkrf.png)')
 					a.cult_mos(href='http://kultura.mos.ru', target='_blank'): span(style='background-image: url(img/logos/cult_mos.svg)')

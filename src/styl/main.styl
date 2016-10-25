@@ -1,6 +1,10 @@
 // main-color = rgb(173, 136, 32)
 main-color = rgb(134, 117, 80)
 
+@font-face {
+	font-family: 'Voina';
+	src: url('/fonts/Voina.ttf');
+}
 
 html, body
 	margin 0
@@ -141,7 +145,7 @@ p
 			padding-left 40px
 			padding-right 40px
 			.content-title
-				font-size 24pt
+				font 24pt/24pt 'Voina'
 				color main-color
 				display inline-block
 				box-sizing border-box
@@ -158,8 +162,9 @@ p
 					padding 2px
 					padding-left 10px
 					padding-right 10px
-					margin-right -5px
+					margin-right -4px
 					margin-bottom 3px
+					padding-top 6pt
 
 		@import 'content/banner.styl'
 

@@ -25,13 +25,13 @@ html
 		.menu-block
 			.menu-items.main
 				.menu-drop
-					.menu-item.main= __('Главная')
-					.menu-item.heads= __('Цитаты')
-					.menu-item.about= __('О выставке')
-					.menu-item.plan= __('Экспозиция')
-					.menu-item.schedule= __('Расписание событий')
-					.menu-item.contacts= __('Как добраться')
-					.menu-item.partners= __('Участники проекта')
+					.menu-item.main= __('ГЛАВНАЯ')
+					.menu-item.heads= __('ЦИТАТЫ')
+					.menu-item.about= __('О ВЫСТАВКЕ')
+					.menu-item.plan= __('ЭКСПОЗИЦИЯ')
+					.menu-item.schedule= __('РАСПИСАНИЕ СОБЫТИй')
+					.menu-item.contacts= __('КАК ДОБРАТЬСЯ')
+					.menu-item.partners= __('УЧАСТНИКИ ПРОЕКТА')
 			if locale == 'ru'
 				a.menu-items.locale(href='/lang/en') en
 			else
@@ -69,7 +69,7 @@ html
 			//- About
 
 			.content-item.about: .content-inner
-				.content-title!= getDash(__('О выставке'))
+				.content-title!= getDash(__('О ВЫСТАВКЕ'))
 				.content-columns
 					if locale == 'ru'
 						include about/ru.jade
@@ -81,7 +81,7 @@ html
 			.content-item.plan
 				#plan-canvas
 				.content-inner
-					.content-title!= getDash(__('Экспозиция'))
+					.content-title!= getDash(__('ЭКСПОЗИЦИЯ'))
 					.content-preview-image: .preview-inner
 					.content-preview-column
 						.preview-images
@@ -97,7 +97,7 @@ html
 			//- Schedule
 
 			.content-item.schedule: .content-inner
-				.content-title!= getDash(__('Расписание событий'))
+				.content-title!= getDash(__('РАСПИСАНИЕ СОБЫТИй'))
 				.content-schedule
 					if locale == 'ru'
 						include schedule/ru.jade
@@ -114,13 +114,13 @@ html
 						include contacts/en.jade
 				#map-canvas
 				.content-inner
-					.content-title!= getDash(__('Как добраться'))
+					.content-title!= getDash(__('КАК ДОБРАТЬСЯ'))
 
 			//- Partners
 
 			.content-item.partners
 				.content-inner
-					.content-title!= getDash(__('Участники проекта'))
+					.content-title!= getDash(__('УЧАСТНИКИ ПРОЕКТА'))
 					.content-partners-columns
 						if locale == 'ru'
 							include partners/ru.jade

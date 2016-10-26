@@ -109,9 +109,10 @@ $(function() {
 
 	$(window).on('resize', function(event) {
 		var height = $('.content-item.plan').height();
+		var img_height = $('.preview-images').height();
 
 		$('.content-preview-image').height(height - 80);
-		$('.preview-body').height(height - 280);
+		$('.preview-body').height(height - (img_height != 0 ? (img_height + 80) : 80));  // height - 280
 	}).trigger('resize');
 
 

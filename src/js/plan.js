@@ -53,6 +53,8 @@ $(function() {
 
 				swiperH[1].removeAllSlides();
 				swiperH[1].appendSlide($data.filter('.data-images').children());
+
+				$(window).trigger('resize');
 			});
 
 			map.setView(e.latlng);

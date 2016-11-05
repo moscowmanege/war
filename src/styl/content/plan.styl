@@ -42,28 +42,30 @@
 		.content-preview-column
 			display none
 			margin-top 40px
-			width 100%
-			max-width 380px
+			width 380px
 			position absolute
 			right 40px
 			top 0
-			// transition .3s ease-out
 			&.active
 				display block
 			&.open
-				// transition .3s ease-in
-				// max-width 1280px
-				position relative
-				max-width none
+				width auto
 				left 0
 				right 0
+				margin-left 40px
+				margin-right 40px
+				box-sizing border-box
 				.preview-body
 					cursor zoom-out
 				.preview-title
-					font-size 24pt
+					padding-top 30px!important
+					padding-bottom 20px!important
+					font-size 24pt!important
 				.preview-description
+					font-size 14pt!important
+					line-height 16pt!important
 					columns 4 320px
-					column-gap 3em
+					column-gap 2.5em
 					column-rule 5px solid black
 					margin-bottom 20px
 			.preview-images
@@ -111,7 +113,6 @@
 						text-align center
 						line-height 36px
 			.preview-body
-				// cursor ns-resize
 				cursor zoom-in
 				overflow hidden
 				height 380px

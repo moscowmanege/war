@@ -85,7 +85,7 @@ $(function() {
 	});
 
 
-	$(document).on('click', '.preview-body-inner', function(event) {
+	$(document).on('click', '.preview-body', function(event) {
 		$('.content-preview-column').toggleClass('open');
 		$('.content-preview-image').removeClass('active');
 

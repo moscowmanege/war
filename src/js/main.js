@@ -139,7 +139,7 @@ $(function() {
 		});
 
 	} else {
-		$content_banner.css('background-image', 'url(' + location.href + 'img/banner/' + randInt(1,3) + '.png)');
+		$content_banner.css('background-image', 'url(/img/main/' + randInt(1,3) + '.png)');
 	}
 
 

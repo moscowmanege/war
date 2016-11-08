@@ -40,19 +40,20 @@ $(function() {
 	// Data Loader
 
 
-	var loader = function(params) {
+	var Loader = function(params) {
 		return function(e) {
 			$('.content-preview-image, .content-preview-column').removeClass('active');
 
 			$.post('/plan', params).done(function(data) {
 				var $data = $(data);
 
-				$('.preview-title').html($data.filter('.data-title'));
-				$('.preview-description').html($data.filter('.data-description'));
+				$('.preview-title').html($data.filter('.data-title').html());
+				$('.preview-description').html($data.filter('.data-description').html());
+
 				$('.content-preview-column').addClass('active').find('.preview-body').scrollTop(0);
 
 				swiperH[1].removeAllSlides();
-				swiperH[1].appendSlide($data.filter('.data-images').children());
+				swiperH[1].appendSlide($data.filter('.data-images').html());
 
 				$(window).trigger('resize');
 			});
@@ -112,7 +113,7 @@ $(function() {
 			return feature.properties.theme == 'front';
 		}
 	})
-	.on('click', loader({ type: 'themes', item: 'front' }))
+	.on('click', Loader({ type: 'themes', item: 'front' }))
 	.on('mouseover', function(e) {
 		this.setStyle({
 			color: 'green',
@@ -138,7 +139,7 @@ $(function() {
 			return feature.properties.theme == 'city';
 		}
 	})
-	.on('click', loader({ type: 'themes', item: 'city' }))
+	.on('click', Loader({ type: 'themes', item: 'city' }))
 	.on('mouseover', function(e) {
 		this.setStyle({
 			color: 'green',
@@ -164,7 +165,7 @@ $(function() {
 			return feature.properties.theme == 'memory';
 		}
 	})
-	.on('click', loader({ type: 'themes', item: 'memory' }))
+	.on('click', Loader({ type: 'themes', item: 'memory' }))
 	.on('mouseover', function(e) {
 		this.setStyle({
 			color: 'green',
@@ -203,7 +204,7 @@ $(function() {
 				});
 			});
 
-			layer.on('click', loader({ type: 'halls', item: feature.properties.numb }));
+			layer.on('click', Loader({ type: 'halls', item: feature.properties.numb }));
 
 		}
 	}).addTo(map);
@@ -224,7 +225,7 @@ $(function() {
 
 	L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-	L.easyButton('<span class="star" style="font-size: 19px; line-height: 22px;">✦</span>', function(btn, map){
+	L.easyButton('<span class="star">✦</span>', function(btn, map){
 		map.setView([0, 0], 2);
 	}, { position: 'bottomleft' }).addTo(map);
 
